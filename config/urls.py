@@ -13,19 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 # ルーティング設定
+from config import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # 管理サイトの見出しを変更可能
 #  タイトル；タイトルタグで使用
 admin.site.site_title = 'タイトル'
 #  サイト名：ログイン画面と管理画面上部の表示
-admin.site.site_header = 'スマッシュブラザーズSPデータベース'
+admin.site.site_header = 'S A K E'
 #  メニュー：管理画面の見出し表示
 admin.site.index_title = 'メニュー'

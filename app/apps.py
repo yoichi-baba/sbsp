@@ -7,4 +7,4 @@ class AppConfig(AppConfig):
     管理画面での表示名を指定する
     """
     name = 'app'
-    verbose_name = 'スマッシュブラザーズSPデータベース'
+    verbose_name = 'S A K E'

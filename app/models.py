@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 
 from users.models import User
@@ -5,37 +6,44 @@ from users.models import User
 
 class Item(models.Model):
     """
-    データ定義クラス
-      各フィールドを定義する
-    参考：
-    ・公式 モデルフィールドリファレンス
-    https://docs.djangoproject.com/ja/2.1/ref/models/fields/
+    酒マスタ
     """
 
-    # ファイターID
-    fighter_id = models.CharField(
-        verbose_name='ファイターID',
-        max_length=3,
+    # 名称
+    alcohol_name = models.CharField(
+        verbose_name='名称',
+        max_length=50,
         blank=False,
         null=False,
     )
 
-    # ファイター名
-    fighter_name = models.CharField(
-        verbose_name='ファイター名',
-        max_length=50,
+    alcohol_kbn_name = models.CharField(
+        verbose_name='区分名',
+        max_length=10,
         blank=True,
         null=True,
     )
 
-    # ファイター名(英語)
-    fighter_name_en = models.CharField(
-        verbose_name='ファイター名(英語)',
-        max_length=50,
+    # 内容量
+    alcohol_capacity = models.IntegerField(
+        verbose_name='内容量',
         blank=True,
         null=True,
     )
 
+    # 度数
+    alcoholic_proof = models.IntegerField(
+        verbose_name='度数',
+        blank=True,
+        null=True,
+    )
+
+    # 商品説明
+    alcohol_info = models.TextField(
+        verbose_name='商品説明',
+        blank=True,
+        null=True,
+    )
 
     # 以下、管理項目
 
@@ -81,11 +89,11 @@ class Item(models.Model):
         """
         リストボックスや管理画面での表示
         """
-        return self.fighter_name
+        return self.alcohol_name
 
     class Meta:
         """
         管理画面でのタイトル表示
         """
-        verbose_name = 'ファイター名マスタ'
-        verbose_name_plural = 'ファイター名マスタ'
+        verbose_name = '酒マスタ'
+        verbose_name_plural = '酒マスタ'
