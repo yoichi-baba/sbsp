@@ -26,6 +26,6 @@ urlpatterns = [
 #  タイトル；タイトルタグで使用
 admin.site.site_title = 'タイトル'
 #  サイト名：ログイン画面と管理画面上部の表示
-admin.site.site_header = 'スマッシュブラザースSPデータベース'
+admin.site.site_header = 'スマッシュブラザーズSPデータベース'
 #  メニュー：管理画面の見出し表示
 admin.site.index_title = 'メニュー'
