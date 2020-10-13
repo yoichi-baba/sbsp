@@ -64,7 +64,7 @@
                                     <p>内容量</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.alcohol_capacity|default_if_none:"未入力" }}ml</p>
+                                    <p>{{ item.alcohol_capacity|default_if_none:"0" }}ml</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -72,7 +72,15 @@
                                     <p>度数</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.alcoholic_proof|default_if_none:"未入力" }}%</p>
+                                    <p>{{ item.alcoholic_proof|default_if_none:"0" }}%</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>本数</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.alcohol_num|default_if_none:"0" }}%</p>
                                 </div>
                             </div>
                             <div class="row">

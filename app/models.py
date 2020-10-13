@@ -38,6 +38,13 @@ class Item(models.Model):
         null=True,
     )
 
+    # 本数
+    alcohol_num = models.IntegerField(
+        verbose_name='本数',
+        blank=True,
+        null=True,
+    )
+
     # 商品説明
     alcohol_info = models.TextField(
         verbose_name='商品説明',
